@@ -1,0 +1,21 @@
+
+.container {
+    margin: 0 auto;
+    max-width: 1000px;
+    width: 100%;
+  
+    .row {
+        &::before,
+        &::after { 
+     content:'';
+     display:block;
+      width: 100%;
+        }
+        @for $i from 1 through 12 {
+          .col-#{$i} {
+            float:left;
+            width: 100% / 12 * $i;
+          }
+      }
+    }
+  }
