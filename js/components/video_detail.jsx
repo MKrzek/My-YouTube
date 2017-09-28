@@ -17,8 +17,8 @@ render (){
                 <iframe className='col-9 video-img' src={url}></iframe>
             </div>
             <div>
-            <div className='col-12 main-video-info'>{video.snippet.title}</div>
-            <div className='col-10 main-video-info'>{video.snippet.description}</div>
+            <div className='col-9 main-video-info title-info'>{video.snippet.title}</div>
+            <div className='col-9 main-video-info description-info'>{video.snippet.description}</div>
             </div>
             </div>
             

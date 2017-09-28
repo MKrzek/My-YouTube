@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Title from './Title.jsx';
 
 class SearchBar extends React.Component{
     constructor(props){
@@ -9,14 +10,16 @@ class SearchBar extends React.Component{
         }
     }
     render(){
-        return(
-            <div className='col-12 search-bar'>
+        return<div>
+             <Title/>
+            <div className='col-12 search-bar'>   
                 <label>Enter a word to find videos you are looking for:
          <input value ={this.state.term} className='searchInput'
                 onChange={(event)=>this.onInputChange(event.target.value)}/>
              </label>    
             </div>
-        )
+            </div>
+        
 
     }
     onInputChange(term){

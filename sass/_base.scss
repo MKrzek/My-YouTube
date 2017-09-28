@@ -1,6 +1,10 @@
 html{
     background-color: lightblue;
 }
+.title{
+    margin-top: 10px;
+    text-align: center;
+}
 .search-bar{
     height: 40px;
     padding-bottom:40px;
@@ -18,16 +22,21 @@ html{
     width:50%;
     height: 300px;
     margin-left:20px;
-   
+  
+.video-detail{
+    margin-top: 20px;
+    padding-top: 20px;
+}
    
 }
 .main-video-info{
     margin-top:5px;
     margin-left: 20px;
+    border: 1px solid #807C7C;
 }
 .info{
     padding:10px;
-    border: 2px solid #807C7C;
+    border: 1px solid #807C7C;
     margin-right:10px;
 }
 .individual-video{
