@@ -1,54 +1,42 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
-    entry : {
-       './public/script.js': './js/project.jsx',
-       './public/css/style.css~' : './sass/style.scss'
-      
-   },
-   output : {
-       path: __dirname+'/',
-       filename: '[name]'
-   },
-   devServer: {
-      inline: true,
-      contentBase: './public/',
-      port: 3001
-    },
-    watch: true,
-    module: {
-        loaders: [
-            {
-                test: /\.jsx$/, 
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: { presets: ['es2015', 'stage-2', 'react'] }
-            },
-            {
-                test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: ['css-loader', 'sass-loader']
-                })
-
-            },
-
-             {
-              test: /\.(png|jpg|gif)$/,
-              exclude: /node_modules/,
-              use: [
-                {
-                  loader: 'file-loader',
-                  options: {}
-                }
-              ]
-            }
-        ]
-    },
-    plugins: [
-       new ExtractTextPlugin('./public/css/style.css'),
-       
-       
-
-   ]
+  context: __dirname,
+  entry: "./js/project.jsx",
+  output: {
+    path: __dirname + '/public',
+    filename: "script.js",
+    publicPath: '/public/'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js|.jsx?$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015']
+        }
+      },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('css-loader!sass-loader')
+      }
+    ]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+  plugins: [
+    new ExtractTextPlugin({ 
+      filename: './public/css/style.css', 
+      allChunks: true,
+      disable: true 
+    })
+  ],
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './'
+  }
 };
