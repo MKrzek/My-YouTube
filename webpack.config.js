@@ -12,7 +12,7 @@ module.exports = {
    },
    devServer: {
       inline: true,
-      contentBase: './',
+      contentBase: './public/',
       port: 3001
     },
     watch: true,
