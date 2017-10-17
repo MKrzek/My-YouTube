@@ -4,7 +4,7 @@ class Title extends React.Component{
         super (props);
     }
     render(){
-        return <h1 className='title'>Your Own Video Generator </h1>
+        return <h1 className='title'>Your Video Generator </h1>
     }
 }
 

@@ -1,7 +1,7 @@
 {
   "name": "project",
   "version": "1.0.0",
-  "description": "Exchange-Rate Currency",
+  "description": "My video-generator",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --hot --inline",
@@ -34,6 +34,7 @@
     "webpack-hot-middleware": "^2.16.1"
   },
   "devDependencies": {
-    "babel-preset-env": "^1.6.0"
+    "babel-preset-env": "^1.6.0",
+    "write-file-webpack-plugin": "^4.2.0"
   }
 }

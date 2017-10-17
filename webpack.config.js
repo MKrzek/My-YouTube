@@ -1,5 +1,6 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 var webpack = require('webpack');
+const WriteFilePlugin =require('write-file-webpack-plugin');
 
 module.exports = {
   context: __dirname,
@@ -33,7 +34,8 @@ module.exports = {
       filename: './public/css/style.css', 
       allChunks: true,
       disable: true 
-    })
+    }),
+    new WriteFilePlugin(),
   ],
   devServer: {
     historyApiFallback: true,
